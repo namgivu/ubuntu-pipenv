@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 docstring='
-                     ./build.sh
-    REMOVE_CURRENT=0 ./build.sh  # keep current image; also this is default
-    REMOVE_CURRENT=1 ./build.sh  # delete the current image before build
+                     ./docker-build.sh
+    REMOVE_CURRENT=0 ./docker-build.sh  # keep current image; also this is default
+    REMOVE_CURRENT=1 ./docker-build.sh  # delete the current image before build
 
-                     ./build.sh | tee ./tmp/log/docker-build.`date +%Y%m%d_%H%M%S_%N`.log
+                     ./docker-build.sh | tee ./tmp/log/docker-build.`date +%Y%m%d_%H%M%S_%N`.log
 '
 
 SH=$(cd `dirname $BASH_SOURCE` && pwd)  # SH aka SCRIPT_HOME the containing folder of this script
 
-IMAGE_NAME='ubuntu-1604-pipenv'
+IMAGE_NAME=${IMAGE_NAME:-'namgivu/ubuntu-1604-pipenv'}
 
 # remove the current as required by param :REMOVE_CURRENT
 if [[ $REMOVE_CURRENT == 1 ]]; then
