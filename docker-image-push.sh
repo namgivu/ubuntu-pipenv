@@ -21,7 +21,6 @@ echo; echo -e "--> Checking image $IMAGE_TAG exists"
         exit
     fi
 
-#TODO login not working seem like I cannot switch to :namgivu user for docker hub ie error='denied: requested access to the resource is denied' try:https://stackoverflow.com/a/48135364/248616
 echo; echo -e "--> Log in docker hub"
 set -x  # print executed commands ON
     u=${u:-'namgivu'}
