@@ -7,6 +7,7 @@ docstring='
                      ./docker-build.sh | tee ./tmp/log/docker-build.`date +%Y%m%d_%H%M%S_%N`.log
 
     UBUNTU_VERSION=16.04 PYTHON_VERSION=3.7 REMOVE_CURRENT=1  ./docker-build.sh
+    UBUNTU_VERSION=16.04 PYTHON_VERSION=3.6 REMOVE_CURRENT=1  ./docker-build.sh
 '
 
 SH=$(cd `dirname $BASH_SOURCE` && pwd)  # SH aka SCRIPT_HOME the containing folder of this script
