@@ -2,7 +2,7 @@
 FROM ubuntu:16.04
 
 # change suffix _x to any new value to force a rebuild from this step
-RUN echo 200226_x1
+RUN echo 200327_x1
 
 # deb package initials
 RUN apt-get update
@@ -59,7 +59,7 @@ RUN echo; \
 WORKDIR /app
 
 # change suffix _x to any new value to force a rebuild from this step
-RUN echo 200226_x2
+RUN echo 200327_x2
 
 # pipenv setup
 ENV PIPENV_VERBOSITY=-1
