@@ -1,8 +1,8 @@
-# ubuntu 16.04 with python ref. https://gist.github.com/monkut/c4c07059444fd06f3f8661e13ccac619
-FROM ubuntu:16.04
+# ref. ubuntu 16.04 with python https://gist.github.com/monkut/c4c07059444fd06f3f8661e13ccac619
+FROM ubuntu:${UBUNTU_VERSION}
 
 # change suffix _x to any new value to force a rebuild from this step
-RUN echo 200226_x1
+RUN echo 200327_x1
 
 # deb package initials
 RUN apt-get update
@@ -11,11 +11,11 @@ RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update
 RUN apt-get install -y build-essential
 
-# install python 3.6.x
-RUN apt-get install -y python3.6 python3.6-dev python3-pip python3.6-venv
+# install python ${PYTHON_VERSION}
+RUN apt-get install -y python${PYTHON_VERSION} python${PYTHON_VERSION}-dev python3-pip python${PYTHON_VERSION}-venv
 
-# make binary python linked to python3.6
-RUN ln -sf /usr/bin/python3.6 /usr/bin/python
+# make binary python linked to this ${PYTHON_VERSION}
+RUN ln -sf /usr/bin/python${PYTHON_VERSION} /usr/bin/python
 
 # update pip
 RUN python -m pip install --upgrade pip
@@ -33,7 +33,7 @@ RUN echo `python --version`; \
     echo `python -m pipenv --version`; \
     echo `pipenv --version`;
 
-#endregion ubuntu 16.04 with python ref. https://gist.github.com/monkut/c4c07059444fd06f3f8661e13ccac619
+###endregion installing ubuntu with python
 
 
 # install fancy utility eg ping, httpie, git, etc - useful for healthcheck
@@ -59,7 +59,7 @@ RUN echo; \
 WORKDIR /app
 
 # change suffix _x to any new value to force a rebuild from this step
-RUN echo 200226_x2
+RUN echo 200327_x2
 
 # pipenv setup
 ENV PIPENV_VERBOSITY=-1
