@@ -13,8 +13,10 @@ if [[ -z $UBUNTU_VERSION ]]; then echo 'Param :UBUNTU_VERSION is required in env
 if [[ -z $PYTHON_VERSION ]]; then echo 'Param :PYTHON_VERSION is required in env variable'; exit 1; fi
 
 
- IMAGE_TAG=${IMAGE_TAG:-"$UBUNTU_VERSION-$PYTHON_VERSION"}
-IMAGE_NAME=${IMAGE_NAME:-"namgivu/ubuntu-pipenv:$IMAGE_TAG"}
+IMAGE_REG_REPO='namgivu/ubuntu-pipenv'
+     IMAGE_TAG=${IMAGE_TAG:-"$UBUNTU_VERSION-$PYTHON_VERSION"}
+    IMAGE_NAME=${IMAGE_NAME:-"$IMAGE_REG_REPO:$IMAGE_TAG"}
+#eg                     namgivu/ubuntu-pipenv:16.04-3.7
 
 echo; echo -e "--> Checking image $IMAGE_TAG exists"
     set -x  # print executed commands ON
@@ -51,5 +53,5 @@ set +e  # halt if error OFF
 echo; echo -e "--> Aftermath check"
     echo -e "\
     Docker image pushed as $IMAGE_TAG
-                        at https://hub.docker.com/r/$u/$IMAGE_NAME
+                        to https://hub.docker.com/r/$IMAGE_REG_REPO
 "
