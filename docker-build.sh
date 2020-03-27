@@ -6,8 +6,10 @@ docstring='
 
                      ./docker-build.sh | tee ./tmp/log/docker-build.`date +%Y%m%d_%H%M%S_%N`.log
 
-    UBUNTU_VERSION=16.04 PYTHON_VERSION=3.7 REMOVE_CURRENT=1  ./docker-build.sh
-    UBUNTU_VERSION=16.04 PYTHON_VERSION=3.6 REMOVE_CURRENT=1  ./docker-build.sh
+    PYTHON_VERSION=3.7 UBUNTU_VERSION=16.04 REMOVE_CURRENT=1  ./docker-build.sh
+    PYTHON_VERSION=3.6 UBUNTU_VERSION=16.04 REMOVE_CURRENT=1  ./docker-build.sh
+    PYTHON_VERSION=3.7 UBUNTU_VERSION=18.04 REMOVE_CURRENT=1  ./docker-build.sh
+    PYTHON_VERSION=3.6 UBUNTU_VERSION=18.04 REMOVE_CURRENT=1  ./docker-build.sh
 '
 
 SH=$(cd `dirname $BASH_SOURCE` && pwd)  # SH aka SCRIPT_HOME the containing folder of this script
@@ -67,6 +69,6 @@ Here are some fancy aftermath commands
     docker run -d --name $c $IMAGE_NAME ; docker ps | grep -E '$c|$IMAGE_NAME' --color=always
         docker exec $c python -V | grep $PYTHON_VERSION                       || echo '[!] Something not right; NOT FOUND python version $PYTHON_VERSION' ;
         docker exec $c cat /etc/os-release | grep -i 'ubuntu $UBUNTU_VERSION' || echo '[!] Something not right; NOT FOUND ubuntu version $PYTHON_VERSION' ;
-    docker stop $c; docker remove $c; yes | docker container prune ;
+    docker stop $c; docker rm $c; yes | docker container prune ;
 "
 set -e  # halt if error OFF

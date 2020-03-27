@@ -4,7 +4,10 @@ docstring='
               ./docker-image-push.sh | tee ./tmp/log/docker-image-push.`date +%Y%m%d_%H%M%S_%N`
     u=namgivu ./docker-image-push.sh  # docker hub push to user/repo :u
 
-    u=namgivu UBUNTU_VERSION=16.04 PYTHON_VERSION=3.7 ./docker-image-push.sh
+    PYTHON_VERSION=3.7 u=namgivu UBUNTU_VERSION=16.04 ./docker-image-push.sh
+    PYTHON_VERSION=3.6 u=namgivu UBUNTU_VERSION=16.04 ./docker-image-push.sh
+    PYTHON_VERSION=3.7 u=namgivu UBUNTU_VERSION=18.04 ./docker-image-push.sh
+    PYTHON_VERSION=3.6 u=namgivu UBUNTU_VERSION=16.04 ./docker-image-push.sh
 '
 
 SH=$(cd `dirname $BASH_SOURCE` && pwd)  # SH aka SCRIPT_HOME the containing folder of this script
