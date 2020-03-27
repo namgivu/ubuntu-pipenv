@@ -11,9 +11,9 @@ namgivu/ubuntu-pipenv:16.04-3.6
 namgivu/ubuntu-pipenv:16.04-3.7
 
 ## ubuntu 18.04 and python 3.6 and 3.7
-namgivu/ubuntu-pipenv:16.04-3.6
+namgivu/ubuntu-pipenv:18.04-3.6
 
-namgivu/ubuntu-pipenv:16.04-3.7
+namgivu/ubuntu-pipenv:18.04-3.7
 
 
 
@@ -29,6 +29,6 @@ at https://hub.docker.com/repository/docker/namgivu/ubuntu-1604-pipenv
 
 
 # TODO 
-TODO need test/docker-run/ using this image
+TODO need test/docker-run.sh using the image
 
-TODO need test/docker-compose/ using this image
+TODO need test/docker-compose.sh using the image
