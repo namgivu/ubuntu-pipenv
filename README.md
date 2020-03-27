@@ -19,13 +19,13 @@ namgivu/ubuntu-pipenv:18.04-3.7
 
 # info 0th
 
-docker image build from ubuntu 16.04 with python 
+ubuntu with python docker image
 
 ref. https://gist.github.com/monkut/c4c07059444fd06f3f8661e13ccac619
 
 public built image at docker hub
 
-at https://hub.docker.com/repository/docker/namgivu/ubuntu-1604-pipenv
+at https://hub.docker.com/r/namgivu/ubuntu-pipenv
 
 
 # TODO 
