@@ -58,5 +58,15 @@ set -e  # halt if error ON
 
     # aftermath check
     echo
-    docker image ls | grep -iE "$IMAGE_TAG|TAG" --color=always
+        docker image ls | grep -iE "$IMAGE_TAG|TAG" --color=always
+    echo
+        c="my$UBUNTU_VERSION-$PYTHON_VERSION"  # c aka container name
+        echo "
+DONE
+Here are some fancy aftermath commands
+    docker run -d --name $c $IMAGE_NAME ; docker ps | grep -E '$c|$IMAGE_NAME' --color=always
+        docker exec $c python -V | grep $PYTHON_VERSION                       || echo '[!] Something not right; NOT FOUND python version $PYTHON_VERSION' ;
+        docker exec $c cat /etc/os-release | grep -i 'ubuntu $UBUNTU_VERSION' || echo '[!] Something not right; NOT FOUND ubuntu version $PYTHON_VERSION' ;
+    docker stop $c; docker remove $c; yes | docker container prune ;
+"
 set -e  # halt if error OFF
