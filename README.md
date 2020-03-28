@@ -1,3 +1,6 @@
+# public built image at docker hub
+at https://hub.docker.com/r/namgivu/ubuntu-pipenv
+
 # target image name
 namgivu/ubuntu-pipenv:UU-PP
 
@@ -20,10 +23,6 @@ python   ubuntu   image name                        docker hub   Dockerfile
 ubuntu with python docker image
 
 ref. https://gist.github.com/monkut/c4c07059444fd06f3f8661e13ccac619
-
-public built image at docker hub
-
-at https://hub.docker.com/r/namgivu/ubuntu-pipenv
 
 
 # TODO 
