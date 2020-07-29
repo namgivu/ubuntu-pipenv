@@ -8,8 +8,11 @@ docstring='
 
     PYTHON_VERSION=3.7 UBUNTU_VERSION=16.04 REMOVE_CURRENT=1  ./docker-build.sh
     PYTHON_VERSION=3.6 UBUNTU_VERSION=16.04 REMOVE_CURRENT=1  ./docker-build.sh
+
     PYTHON_VERSION=3.7 UBUNTU_VERSION=18.04 REMOVE_CURRENT=1  ./docker-build.sh
     PYTHON_VERSION=3.6 UBUNTU_VERSION=18.04 REMOVE_CURRENT=1  ./docker-build.sh
+
+    PYTHON_VERSION=3.8 UBUNTU_VERSION=20.04 REMOVE_CURRENT=1  ./docker-build.sh
 '
 
 SH=$(cd `dirname $BASH_SOURCE` && pwd)  # SH aka SCRIPT_HOME the containing folder of this script

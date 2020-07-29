@@ -6,8 +6,11 @@ docstring='
 
     PYTHON_VERSION=3.7 u=namgivu UBUNTU_VERSION=16.04 ./docker-image-push.sh
     PYTHON_VERSION=3.6 u=namgivu UBUNTU_VERSION=16.04 ./docker-image-push.sh
+
     PYTHON_VERSION=3.7 u=namgivu UBUNTU_VERSION=18.04 ./docker-image-push.sh
     PYTHON_VERSION=3.6 u=namgivu UBUNTU_VERSION=16.04 ./docker-image-push.sh
+
+    PYTHON_VERSION=3.8 u=namgivu UBUNTU_VERSION=20.04 ./docker-image-push.sh
 '
 
 SH=$(cd `dirname $BASH_SOURCE` && pwd)  # SH aka SCRIPT_HOME the containing folder of this script
