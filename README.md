@@ -1,6 +1,14 @@
 # public built image at docker hub
 at https://hub.docker.com/r/namgivu/ubuntu-pipenv
 
+We aim to have the easy-to-use base docker image in a Dockerfile
+i.e. 
+```dockerfile
+FROM namgivu/ubuntu-pipenv:20.04-3.8
+FROM namgivu/ubuntu-pipenv:18.04-3.7
+FROM namgivu/ubuntu-pipenv:16.04-3.6
+```
+
 # target image name
 namgivu/ubuntu-pipenv:UU-PP
 
