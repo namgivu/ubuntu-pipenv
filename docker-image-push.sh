@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 docstring='
               ./docker-image-push.sh
-              ./docker-image-push.sh | tee ./tmp/log/docker-image-push.`date +%Y%m%d_%H%M%S_%N`
+              ./docker-image-push.sh | tee ./tmp/docker-image-push.`date +%Y%m%d_%H%M%S_%N.log`
     u=namgivu ./docker-image-push.sh  # docker hub push to user/repo :u
 
     PYTHON_VERSION=3.7 u=namgivu UBUNTU_VERSION=16.04 ./docker-image-push.sh
