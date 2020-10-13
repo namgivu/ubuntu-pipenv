@@ -4,7 +4,7 @@ docstring='
     REMOVE_CURRENT=0 ./docker-build.sh  # keep current image; also this is default
     REMOVE_CURRENT=1 ./docker-build.sh  # delete the current image before build
 
-                     ./docker-build.sh | tee ./tmp/log/docker-build.`date +%Y%m%d_%H%M%S_%N`.log
+                     ./docker-build.sh | tee ./tmp/docker-build.`date +%Y%m%d_%H%M%S_%N`.log
 
     PYTHON_VERSION=3.7 UBUNTU_VERSION=16.04 REMOVE_CURRENT=1  ./docker-build.sh
     PYTHON_VERSION=3.6 UBUNTU_VERSION=16.04 REMOVE_CURRENT=1  ./docker-build.sh
