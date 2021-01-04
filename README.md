@@ -37,6 +37,10 @@ public built image at docker hub
 at https://hub.docker.com/r/namgivu/ubuntu-pipenv
 
 
+# what to run
+view docstring in `./docker-build.sh`
+view docstring in `./docker-image-push.sh`
+
 # TODO 
 TODO need test/docker-run.sh using the image
 
