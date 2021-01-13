@@ -6,11 +6,12 @@ docstring='
 
                      ./docker-build.sh | tee ./tmp/docker-build.`date +%Y%m%d_%H%M%S_%N`.log
 
-    PYTHON_VERSION=3.7 UBUNTU_VERSION=16.04 REMOVE_CURRENT=1  ./docker-build.sh
     PYTHON_VERSION=3.6 UBUNTU_VERSION=16.04 REMOVE_CURRENT=1  ./docker-build.sh
+    PYTHON_VERSION=3.7 UBUNTU_VERSION=16.04 REMOVE_CURRENT=1  ./docker-build.sh
 
-    PYTHON_VERSION=3.7 UBUNTU_VERSION=18.04 REMOVE_CURRENT=1  ./docker-build.sh
     PYTHON_VERSION=3.6 UBUNTU_VERSION=18.04 REMOVE_CURRENT=1  ./docker-build.sh
+    PYTHON_VERSION=3.7 UBUNTU_VERSION=18.04 REMOVE_CURRENT=1  ./docker-build.sh
+    PYTHON_VERSION=3.8 UBUNTU_VERSION=18.04 REMOVE_CURRENT=1  ./docker-build.sh
 
     PYTHON_VERSION=3.8 UBUNTU_VERSION=20.04 REMOVE_CURRENT=1  ./docker-build.sh
 '
